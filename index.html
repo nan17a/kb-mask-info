@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="title" content="">
+    <meta property="og:url" content="https://kb-mask-info.clayon.io/"/>
+    <meta property="og:title" content="KB손해보험 공공마스크 알리미"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="images/og_image.jpeg"/>
+    <meta property="og:description" content="코로나를 이겨내는 대한민국을 응원합니다"/>
+    <meta name="description" content="KB손해보험에서 제공하는 공적마스크 판매처별 재고현황 사이트입니다. 코로나를 이겨내는 대한민국을 응원합니다"/>
+    <meta name="keywords" content="KB손해보험,KB,KB손보,코로나,공공마스크알림,공적마스크알림,공공마스크알리미,공적마스크알리미,마스크,공적마스크,약국마스크,공공마스크,마스크재고알림,마스크재고알리미,마스크판매현황,마스크재고현황,알림,알리미"/>
+    <link rel="shortcut icon" type="images/x-icon" href="/fav/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/fav/favicon-16x16.png">
+    <link rel="manifest" href="/fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+	<title>KB손해보험 공공마스크 알리미</title>
+
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=[## NAVER NCP CLIENTID ##]"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="js/MarkerOverlapRecognizer.js?v1.00000000000"></script>
+    <script src="js/maskInfoClass.js?v1.00000000000"></script>
+    <script src="js/common_util.js?v1.00000000000"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/loading.css">
+	<link rel="stylesheet" type="text/css" href="css/new_mask.css">
+    <link rel="stylesheet" type="text/css" href="css/list.css">
+    <link rel="stylesheet" type="text/css" href="css/popup.css">
+
+    <script>
+
+        var maskInfo = new maskInfoClass();
+
+        $(window).on("load", function() {
+
+            maskInfo.init({ loading_div_name : '#loadingDiv',
+                            btn_cur_location_name :'#cur_location_btn',
+                            btn_refresh_name :'#refresh_btn',
+                            map_id:'map'
+                          });
+
+        });
+
+</script>
+</head>
+
+<body>
+	<div id="kb_wrapper" class="footer_area">
+		<!-- Header -->
+		<header class="top_fixed">
+			<div class="gnb_m">
+				<div class="gnb_left"><a href="#" title="KB손해보험"><img src="images/bg_logotype.png" class="kb_logo_main" title="KB손해보험"/></a></div>
+               <div class="gnb_right">
+                <a href="#popup1" title="서비스 안내입니다."> <img src="images/ico_question_bg.png" class="question"></a>
+				<button type="button" id="cur_location_btn" class="small_btn now">현위치</button>
+               <button type="button" id="refresh_btn" class="small_btn refresh">정보갱신</button>
+                </div>
+			</div>
+
+			<div class="dim_header"></div>
+		</header>
+
+        <div id="map" style="width:100%;height:400px;"></div>
+
+		<footer class="footer_wrap">
+        <div class="txt">
+        건강보험심사평가원에서 제공하는 마스크 정보는 현장 상황과 5-10분 차이가 있을 수 있습니다.
+        또한 실제 재고 수량과 다를 수 있으며 일시적으로 오류가 발생할 수도 있습니다. (BETA운영중)
+        </div>
+        <div class="colorbox">
+         <ul>
+         <li>100개이상</li>
+         <li>30개이상 </li>
+         <li>30개미만 </li>
+         <li>없음 </li>
+         </ul>
+        </div>
+        </footer>
+	</div>
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>서비스 안내</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                KB손해보험에서 제공하는<br> 공적마스크 판매처별 재고현황 사이트입니다. <br>
+                <hr>
+                <ul class="content-ul">
+                     <li class="content-ul">데이터제공: 공공데이터포털(건강보험심사평가원)</li>
+                     <li class="content-ul">지도 서비스: 네이버(주) </li>
+                     <li class="content-ul">인프라 제공: KB금융지주 Clayon </li>
+                </ul>
+                <hr>
+                코로나를 이겨내는 대한민국을 응원합니다.
+            </div>
+        </div>
+    </div>
+    <div id="loadingDiv" class="loading">
+        Loading...
+    </div>
+
+</body>
+</html>

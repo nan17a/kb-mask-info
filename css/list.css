@@ -1,0 +1,79 @@
+$pri: #128CFC;
+$sec: #fffffe;
+$dark-pri: #0B5AA2;
+
+.list-container {
+  border: 1px solid black;
+
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  margin: auto;
+
+  display: grid;
+  place-items: center;
+  background-color: $pri;
+
+}
+
+.list-items {
+  width: 210px;
+  background: $sec;
+  box-shadow: 0 3px 6px rgba(black,0.16), 0 3px 6px rgba(black,0.23);
+  border-top: 5px solid $dark-pri;
+}
+
+.list-items-head p{
+  padding: 5px 10px;
+  margin: 5px;
+  color: #0B5AA2;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.list-items-head hr {
+  width: 20%;
+  margin: 0px 10px;
+  border: 1px solid $dark-pri;
+}
+
+.list-items-body {
+  padding: 5px;
+  margin: 5px;
+  display: grid;
+  grid-gap: 5px;
+}
+
+.list-items-body-content {
+  padding: 5px;
+  padding-right: 0px;
+  display: grid;
+  grid-template-columns: 10fr 1fr;
+  // background-color: lightblue;
+  font-size: 13px;
+  grid-gap: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+
+}
+
+.list-items-body-content:hover {
+  border-radius: 15px;
+  border: 1px solid $dark-pri;
+}
+
+.list-items-body-content i {
+  align-self: center;
+  font-size: 15px;
+  color: $dark-pri;
+  font-weight: bold;
+  animation: icon 1.5s infinite forwards;
+}
+
+@keyframes icon {
+  0%,100%{
+    transform: translate(0px);
+  }
+  50% {
+    transform: translate(3px);
+  }
+}

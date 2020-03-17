@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+
+/* reset */
+body * {-webkit-box-sizing:border-box; box-sizing:border-box;}
+body, html{ width:100%; height:100%; position:relative; }
+body { margin:0px; font-family:'Noto Sans KR', 'Roboto', 'Malgun Gothic', 'AppleGothic', sans-serif; }
+button{ border:0; font-family:'Noto Sans KR', 'Roboto', 'Malgun Gothic', 'AppleGothic', sans-serif; cursor:pointer; }
+
+
+
+/* direction */
+.fl_left	 {float:left !important;}
+.fl_right	 {float:right !important;}
+.fl_clear	 {clear:both; height:0; font-size:0; line-height:0}
+.fl_center   {margin:0 auto;}
+.fl_none	 {float:none !important;}
+
+.al_left	 {text-align:left !important;}
+.al_center	 {text-align:center !important;}
+.al_right	 {text-align:right !important;}
+.al_justify  {text-align:justify !important;}
+.al_top	     {vertical-align:top !important;}
+.al_middle	 {vertical-align:middle !important;}
+.al_bottom	 {vertical-align:bottom !important;}
+.al_init     {vertical-align:initial !important;}
+.al_sub      {vertical-align:sub !important;}
+
+/* display */
+.hand	     {cursor:pointer}
+.overflow	 {overflow:auto; overflow:hidden}
+
+.block       {display:block !important; }
+.inline      {display:inline !important; }
+.inblock     {display:inline-block !important; }
+.none	     {display:none !important}
+.hide	     {display:block; overflow:hidden; position:absolute; top:0; left:0; width:0; height:0; text-indent:-9999px;}
+
+
+
+/* Text overflow with ellipsis */
+.ellipsis{text-overflow:ellipsis;overflow:hidden;white-space:nowrap;line-height:120%;}
+.ellipsis2{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-wrap:break-word;line-height:120%;}
+
+/* Layout */
+#kb_wrapper{position:relative; width:100%; min-height:100%; margin:0; padding:0; padding-top:56px; }
+#kb_wrapper.footer_area{ padding-bottom:50px; }
+.top_fixed{ width:100%; height:56px; position:fixed; top:0; left:0; z-index:99; box-shadow:0 0 1.2rem #dfdfdf; }
+.content_area{ width:100%; height:100%; position:relative; overflow:hidden; }
+.content_fixed{ margin-top:52px; margin-bottom:120px; overflow-y:auto; -webkit-overflow-scrolling:touch; -webkit-transform:translate3d(0,0,0); overflow-x:hidden; }
+.content_fixed.main{ margin-bottom:66px; }
+.footer_fixed{ display:block; width:100%; position:fixed; bottom:0px; z-index:99; box-shadow:-1px -2px 2px #adadad; background: #fff;}
+
+/* GNB */
+.gnb_m{ display:block; position:relative; height:56px; background:#fff; }
+.gnb_left{ display:block; position:absolute; left:75px; top:30%; transform:translate(-50%,-50%); color:#fff; height:20px; }
+.gnb_left .ico_center{ width:150px; vertical-align:middle;  }
+.gnb_left .kb_logo_main{ width:130px; }
+
+.gnb_center { display:block; position:absolute; left:100px; top:50%; transform:translate(-50%,-50%); font-size:16px;  font-weight:bold; color:#000000;  height:20px; }
+.gnb_right{ position:absolute; top:12px; right:10px; }
+.gnb_right .question{  display:block; width:20px;  position:absolute; top:5px; right:150px;}
+
+/* button */
+.small_btn{ font-size:11px; padding:0 10px 0 10px; margin:0; color:#222; border-radius:4px; height:30px; font-weight:normal; }
+.small_btn.now{ color:#000000; padding:2px 5px 3px 25px !important; background:#f1f2f4 url('../images/now.png') no-repeat 10% center; background-size:18px auto; }
+.small_btn.refresh{ color:#000000; padding:2px 5px 3px 25px !important; background:#f1f2f4 url('../images/refresh.png') no-repeat 10% center; background-size:18px auto; }
+
+.shop_info {border-radius:3px;font-size:12px;  padding:5px; width:220px;}
+.shop_info .tit {font-size:13px;font-weight:600;  line-height:2;}
+
+
+.footer_wrap {color:#000000; font-size:11px; clear:both; width:100%; position:absolute; left:0; bottom:0px;  height:95px; background:#ffffff; border-top:1px solid #dddddd; padding:5px 0;  text-align:left; }
+.footer_wrap .txt{ padding:0 10px; line-height:1.4;}
+.footer_wrap .colorbox{color:#fff; clear:both; width:100%; position:absolute; left:0; bottom:0;  height:45px; background:#776c61; }
+.footer_wrap ul {  padding-inline-start:20px;  font-size:12px; margin-top: 15px;}
+.footer_wrap li {list-style:none;  width:25%; float:left;  background:url('../images/circle_green.png') no-repeat left; background-size:12px auto; padding-left:17px; }
+.footer_wrap li+li {background:url('../images/circle_yellow.png') no-repeat left; background-size:13px auto;}
+.footer_wrap li+li+li {background:url('../images/circle_red.png') no-repeat left; background-size:13px auto;}
+.footer_wrap li+li+li+li {background:url('../images/circle_gray.png') no-repeat left;background-size:13px auto;}
